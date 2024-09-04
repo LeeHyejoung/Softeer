@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+
+int main(void)
+{
+    char s[1000000], t[1000000];
+    int n, j;
+    char answer[1000000];
+    int idx = 0;
+    
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+        scanf("%s %s", s, t);
+        for (j = 0; s[j] != '\0'; j++) {
+            if (s[j] == 'x' || s[j] == 'X') {
+                break;
+            }
+        }
+
+        if (t[j] >= 'a' && t[j] <= 'z')
+            answer[idx++] = t[j] - 32;
+        else
+            answer[idx++] = t[j];
+    }
+    printf("%s\n", answer);
+    
+   return 0;
+}
